@@ -1,3 +1,22 @@
 <app-user-item *ngFor="let user of users" [details]="user" (onUserView)="onUserSelect($event)"></app-user-item>
 
 <app-selected-user [user]="selectedUser"></app-selected-user>
+
+<p appCustomClick>
+  Hello
+</p>
+
+<input [(ngModel)]="myInputVal" type="text" [ngClass]="myInput.invalid ? 'invalid' : ''" #myInput="ngModel" required
+  minlength="2">
+
+{{myInputVal}}
+
+Pristine: {{myInput.pristine}}
+Valid: {{myInput.valid}}
+Touched: {{myInput.touched}}
+
+<span appCustomClick="red" myGreeting="hello" [ngClass]="enabled ? 'enabled-span': ''">My Text</span>
+
+<button (click)="onBtnClick(myInput)">Toggle</button>
+
+<app-add-user (onAddUser)="onAddUser($event)"></app-add-user>

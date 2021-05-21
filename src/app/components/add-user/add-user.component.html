@@ -1,0 +1,12 @@
+<h2>Add User</h2>
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+  <div>
+    First Name: <input name="firstName" ngModel type="text" required>
+  </div>
+  <div>
+    Last Name: <input name="lastName" ngModel type="text" required>
+  </div>
+  <button>Add</button>
+</form>
+
+{{myForm}}

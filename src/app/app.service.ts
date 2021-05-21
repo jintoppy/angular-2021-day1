@@ -26,4 +26,14 @@ export class AppService {
   getUsers() {
     return this.users;
   }
+
+  addUser(newUser: User) {
+    const lastItem = this.users[this.users.length - 1];
+    const newId = lastItem.id ? lastItem.id + 1 : 0;
+    const updatedNewUser = {
+      id: newId,
+      ...newUser,
+    };
+    this.users.push(updatedNewUser);
+  }
 }
